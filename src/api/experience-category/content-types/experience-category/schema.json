@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experience_categories",
+  "info": {
+    "singularName": "experience-category",
+    "pluralName": "experience-categories",
+    "displayName": "experience category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "profile": {
+      "type": "enumeration",
+      "enum": [
+        "lifestyle",
+        "perfil",
+        "profile",
+        "temporada",
+        "season"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "introduction": {
+      "type": "blocks",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience"
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "aventura",
+        "cultura y arte",
+        "gastronómico",
+        "cruceros",
+        "playa",
+        "safári",
+        "esquí",
+        "eventos especiales",
+        "amigos",
+        "familia",
+        "luna de miel",
+        "el arte de viajar solo",
+        "empresas",
+        "primavera",
+        "invierno",
+        "otoño",
+        "verano",
+        "adventure",
+        "culture and art",
+        "gastronomic",
+        "cruises",
+        "beach",
+        "skiing",
+        "special events",
+        "friends",
+        "family",
+        "honeymoon",
+        "the art of traveling alone",
+        "companies",
+        "spring",
+        "winter",
+        "autumn",
+        "summer"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    }
+  }
+}
