@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_destinations",
+  "info": {
+    "singularName": "top-destination",
+    "pluralName": "top-destinations",
+    "displayName": "top destination",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "destinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::destination.destination"
+    }
+  }
+}
