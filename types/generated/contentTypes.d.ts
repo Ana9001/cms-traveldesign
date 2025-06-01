@@ -618,6 +618,12 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    auxiliarydescription: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -775,6 +781,43 @@ export interface ApiTopDestinationTopDestination
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::top-destination.top-destination'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUnforgettableExperienceUnforgettableExperience
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'unforgettable_experiences';
+  info: {
+    description: '';
+    displayName: 'unforgettable experience';
+    pluralName: 'unforgettable-experiences';
+    singularName: 'unforgettable-experience';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    experiences: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unforgettable-experience.unforgettable-experience'
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1296,6 +1339,7 @@ declare module '@strapi/strapi' {
       'api::experience-category.experience-category': ApiExperienceCategoryExperienceCategory;
       'api::experience.experience': ApiExperienceExperience;
       'api::top-destination.top-destination': ApiTopDestinationTopDestination;
+      'api::unforgettable-experience.unforgettable-experience': ApiUnforgettableExperienceUnforgettableExperience;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

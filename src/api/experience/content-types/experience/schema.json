@@ -225,6 +225,14 @@
         "files",
         "videos"
       ]
+    },
+    "auxiliarydescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
