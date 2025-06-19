@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -43,19 +44,22 @@
       "required": true
     },
     "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos"
       ],
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       }
+    },
+    "slug": {
+      "type": "uid"
     }
   }
 }
